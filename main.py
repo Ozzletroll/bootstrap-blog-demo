@@ -8,7 +8,7 @@ response = requests.get(endpoint).json()
 
 
 @app.route('/')
-def home(blog_json):
+def home(blog_json=response):
     return render_template("index.html", blog_data=blog_json)
 
 
