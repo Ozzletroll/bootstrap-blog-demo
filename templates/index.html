@@ -40,7 +40,7 @@
                     {% for entry in blog_data %}
                         <!-- Blog entry-->
                         <div class="post-preview">
-                            <a href="post.html">
+                            <a href="{{ entry.title }}">
                                 <h2 class="post-title">{{ entry.title }}</h2>
                                 <h3 class="post-subtitle">{{ entry.subtitle }}</h3>
                             </a>
