@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 
 
@@ -35,6 +35,15 @@ def post(post_title, blog_json=response):
     blog_entry = get_post_data(blog_json, post_title)
 
     return render_template("post.html", post=blog_entry)
+
+
+@app.route('/form_entry', methods=["POST"])
+def receive_data():
+    username = request.form["name"]
+    password = request.form["email"]
+    phone_number = request.form["phone_number"]
+    message = request.form["message"]
+    return render_template("contact.html", message_status=True)
 
 
 if __name__ == "__main__":
